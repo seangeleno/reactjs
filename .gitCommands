@@ -1,0 +1,7 @@
+git commit -S -a -m 'signed commit'
+git log --show-signature -1
+git log --pretty="format:%h %G? %aN  %s"
+
+
+with this one, you merge and verify your own signature
+git merge --verify-signatures -S  signed-branch

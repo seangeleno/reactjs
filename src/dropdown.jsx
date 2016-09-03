@@ -4,15 +4,16 @@
 
   var React = require('react');
   var Button = require('./button');
-  // var List = require('./list');
+  const ListItem = require('./list-items');
 
   module.exports = React.createClass({
     handleClick: function () {
-      alert('button clicked from dropdown')
+      
     },
     render: function() {
-      var items = this.props.items.map(function (item) {
-        return <li>{item}</li>
+
+      var list = this.props.items.map(function (item) {
+        return <ListItem item={item} />
       });
 
       return <div className="dropdown">
@@ -22,7 +23,9 @@
             title={this.props.title}
             subTitleClassName="caret"
             />
-          <ul>{items}</ul>
-      </div>
+      <ul>
+        {list}
+      </ul>
+    </div>
     }
   });
